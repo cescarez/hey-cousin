@@ -28,6 +28,7 @@ public class HeyCousinApplication {
 	@GetMapping("/cousin/{id}")
 	Cousin getCousin(@PathVariable String id) {
 		Cousin found; //call database and search for cousin by id, assigning to local
+//        .orElseThrow(() -> new CousinNotFoundException(id));
 		return found ? found : "Cousin not found."; //return results of fuzzy search
 	}
 
