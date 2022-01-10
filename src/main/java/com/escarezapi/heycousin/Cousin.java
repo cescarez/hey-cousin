@@ -1,6 +1,5 @@
 package com.escarezapi.heycousin;
 
-import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
@@ -15,6 +14,9 @@ public class Cousin {
     List<String> nicknames;
 
 // TODO: validate inputs
+    public Cousin() {
+        this("Unknown", "Cousin");
+    }
     public Cousin(String firstName, String lastName) {
         this.id = "0"; //TODO:create algo to create id
         this.firstName = firstName;
@@ -35,4 +37,5 @@ public class Cousin {
     public int getAge() {
         return Period.between(LocalDate.now(), birthDate).getYears();
     }
+
 }

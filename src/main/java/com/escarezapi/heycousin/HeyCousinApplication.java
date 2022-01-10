@@ -12,6 +12,8 @@ public class HeyCousinApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HeyCousinApplication.class, args);
+
+
 	}
 
 	@GetMapping("/hello")
@@ -21,27 +23,27 @@ public class HeyCousinApplication {
 
 	@GetMapping("/cousins")
 	List<Cousin> getAllCousins() {
-	    List<> allCousins; //call database and return all names -- implement generics here
+	    List<Cousin> allCousins = null; //call database and return all names -- implement generics here
 		return allCousins;
 	}
 
 	@GetMapping("/cousin/{id}")
 	Cousin getCousin(@PathVariable String id) {
-		Cousin found; //call database and search for cousin by id, assigning to local
+		Cousin found = null; //call database and search for cousin by id, assigning to local
 //        .orElseThrow(() -> new CousinNotFoundException(id));
-		return found ? found : "Cousin not found."; //return results of fuzzy search
+		return found; //return results of fuzzy search
 	}
 
 	@PostMapping("/cousin/{id}")
-	Cousin updateCousin(@RequestBody Cousin newCousin, @PathVariable String id) {
+	Cousin newCousin(@RequestBody Cousin newCousin, @PathVariable String id) {
 	    //create new cousin
-		Cousin newest; //return latest Cousin in database
+		Cousin newest = null; //return latest Cousin in database
 		return newest;
 	}
 
 	@PutMapping("/cousin/{id}")
 	Cousin updateCousin(@RequestBody Cousin updatedCousin, @PathVariable String id) {
-		Cousin updated; // call database and
+		Cousin updated = null; // call database and
 		return updated;
 	}
 
