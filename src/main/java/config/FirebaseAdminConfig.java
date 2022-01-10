@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FirebaseAdminConfig {
 	@Bean
-	public Firestore getDb(){
+	public static Firestore getDb(){
 		return FirestoreClient.getFirestore();
 	}
 

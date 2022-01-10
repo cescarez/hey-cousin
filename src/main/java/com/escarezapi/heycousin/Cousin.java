@@ -18,7 +18,7 @@ public class Cousin {
         this("Unknown", "Cousin");
     }
     public Cousin(String firstName, String lastName) {
-        this.id = "0"; //TODO:create algo to create id
+        this.id = "0"; //Firebase entity id generated during write is used
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -37,5 +37,5 @@ public class Cousin {
     public int getAge() {
         return Period.between(LocalDate.now(), birthDate).getYears();
     }
-
+    public void setId(String id) { this.id = id; }
 }
